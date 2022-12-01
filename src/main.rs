@@ -1,7 +1,5 @@
-use std::error::Error;
 use std::fs::File;
 use std::io::{self, BufRead};
-use std::path::Path;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut max: u32 = 0;
     let mut counter: u32 = 0;
@@ -13,7 +11,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let line: String = line_result?;
         if line == "" {
             counter = 0;
-            continue
+            continue;
         }
         let value = line.parse::<u32>()?;
         counter += value;
